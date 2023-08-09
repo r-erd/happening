@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 400 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(0.985259,0,0,1.01975,-0.166622,-8.60118)">
+        <path d="M389.452,69.896C389.452,58.648 384.828,47.862 376.597,39.909C368.366,31.956 357.202,27.488 345.561,27.488C271.959,27.488 125.066,27.488 57.272,27.488C37.499,27.488 21.469,42.976 21.469,62.08C21.469,161.121 21.469,444.971 21.469,543.545C21.469,552.62 25.2,561.324 31.842,567.741C38.484,574.158 47.492,577.763 56.885,577.763L352.996,577.763C362.665,577.763 371.938,574.052 378.775,567.447C385.612,560.841 389.452,551.882 389.452,542.54C389.452,445.566 389.452,174.913 389.452,69.896Z" style="fill:white;stroke:black;stroke-width:1px;"/>
+    </g>
+    <g transform="matrix(0.961688,0,0,0.961688,46.7137,187.395)">
+        <text x="68.661px" y="233.012px" style="font-family:'Helvetica';font-size:79.767px;">when</text>
+    </g>
+    <g transform="matrix(1.75545,0,0,1.75545,-25.1422,-51.7045)">
+        <text x="56.841px" y="114.822px" style="font-family:'Helvetica';font-size:69.318px;">what</text>
+    </g>
+    <g transform="matrix(1,0,0,1,48.4529,-47.6075)">
+        <text x="83.004px" y="372.474px" style="font-family:'Helvetica';font-size:79.767px;">why</text>
+    </g>
+    <g transform="matrix(0.834713,0,0,0.834713,32.7915,-197.273)">
+        <text x="95.787px" y="514.883px" style="font-family:'Helvetica';font-size:79.767px;">where</text>
+    </g>
+    <g transform="matrix(1.57627,0,0,1.57627,-36.7104,-345.513)">
+        <text x="94.474px" y="546.878px" style="font-family:'Helvetica-Oblique', 'Helvetica';font-style:italic;font-size:39.518px;">+proof</text>
+    </g>
+</svg>

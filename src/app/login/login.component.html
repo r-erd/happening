@@ -1,0 +1,222 @@
+<div class="container-fluid">
+
+
+    <div #desktopview class="d-none d-lg-block">
+        <div class="row align-items-center p-0" style="margin-top: 30px;background-color:#212121;">
+
+            <div class="col-lg-3 pl-3 justify-content-center align-items-center p-1"
+                style="height: 75vh; text-align: center;">
+
+                <div style="padding-top: 5vh;">
+                    <p style="width: 90%;" class="m-4">before giving you a voice we have to check whether you are human
+                    </p>
+                    <hr style="border:0.3px solid #9e9e9e;">
+                    <p style="width: 90%;" class="m-4">we also want to remember what you did</p>
+                    <p style="width: 90%;" class="m-4">so that you can't just vote multiple times</p>
+                    <hr style="border:0.3px solid #9e9e9e;">
+                    <p style="width: 90%; font-size: larger;" class="m-4">you can register or sign in below</p>
+                    <p style="font-size: smaller;"> click <em style="cursor: pointer;"
+                            (click)="toggleSignin()">here</em> if you want to {{ current }} </p>
+                </div>
+
+
+                <div class="container-fluid">
+
+                    <div *ngIf="errorMessage" class="row align-items-center justify-content-center m-3">
+                        <div style="width: 80%;" class="alert alert-danger m-1" role="alert">
+                            {{ message }}
+                        </div>
+                    </div>
+
+                    <div *ngIf="messageSuccess" class="row align-items-center justify-content-center m-1">
+                        <div style="width: 60vw;" class="alert alert-success m-1" role="alert">
+                          {{successMessage}}
+                        </div>
+                      </div>
+
+                    <form *ngIf="signIn">
+                        <div class="form-group row justify-content-center">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <input id="inputEmail" [formControl]="inputEmail" class="form-control m-2 mt-0"
+                                    type="email" style="width: 250px;" placeholder="email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <input id="inputPassword" [formControl]="inputPassword" class="form-control m-2 mt-0"
+                                    type="password" style="width: 250px;" placeholder="password">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <button type="submit" (click)="login()" class="btn btn-light"> Sign in </button>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <p class="m-2" style="font-size: smaller; cursor: pointer; color: white;"> Forgot
+                                    password?</p>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form style="background-color:#212121;" *ngIf="!signIn">
+                        <div class="form-group row justify-content-center">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <input id="inputEmail2" [formControl]="inputEmail2" class="form-control m-2 mt-0"
+                                    type="email" style="width: 250px;" placeholder="your email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <input id="inputPassword2" [formControl]="inputPassword2" class="form-control m-2 mt-0"
+                                    type="password" style="width: 250px;" placeholder="new password">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <input id="inputPassword3" [formControl]="inputPassword3" class="form-control m-2 mt-0"
+                                    type="password" style="width: 250px;" placeholder="new password">
+                            </div>
+                        </div>
+
+                        <div class="form-group row align-items-center">
+                            <div class="form-check col-sm-12 d-flex justify-content-center">
+                                <div>
+                                    <input   [formControl]="checkBox"  class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" style="color: white;" for="gridCheck">
+                                      I agree to the  <a routerLink="/tos" routerLinkActive="active" target="_blank" style="cursor: pointer;"> <u>terms</u></a> 
+                                    </label>
+                                </div>
+                            </div>
+                          </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <button type="submit" (click)="register()" class="btn btn-light"> Sign up </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div style="height: 75vh;" class="col-lg-9 m-0 d-flex justify-content-right">
+                <img src="./assets/nasa.png" style="width: 100%; height: 100%; object-fit: cover;"
+                    alt="picture of earth from above">
+            </div>
+
+        </div>
+    </div>
+
+    <div #mobileview class="d-xs-block d-lg-none">
+        <div class="row align-items-center p-0" style="background-color:#212121; height: fit-content;">
+
+            <div style="min-height: 75vh; text-align: center; font-size: smaller;"
+                class="col-12 justify-content-center align-items-center p-1">
+
+
+                <div style="height: 20vh;">
+                    <img src="./assets/nasa.png" style="width: 100%; height: 100%; object-fit: cover;"
+                        alt="picture of earth from above">
+                </div>
+
+                <div>
+                    <p style="width: 90%;" class="m-4">before giving you a voice we have to check whether you are human
+                    </p>
+                    <hr style="border:0.3px solid #9e9e9e;">
+                    <p style="width: 90%;" class="m-4">we also want to remember what you did</p>
+                    <p style="width: 90%;" class="m-4">so that you can't just vote multiple times</p>
+                    <hr style="border:0.3px solid #9e9e9e;">
+                    <p style="width: 90%; font-size: larger;" class="m-4">you can register or sign in below</p>
+                    <p style="font-size: smaller;"> click <em style="cursor: pointer;"
+                            (click)="toggleSignin()">here</em> if you want to {{ current }} </p>
+                </div>
+
+
+                <div class="container-fluid">
+
+                    <div *ngIf="errorMessage" class="row align-items-center justify-content-center m-3">
+                        <div style="width: 80%;" class="alert alert-danger m-1" role="alert">
+                          {{ message }}
+                         </div>
+                      </div>
+
+                      <div *ngIf="messageSuccess" class="row align-items-center justify-content-center m-1">
+                        <div style="width: 60vw;" class="alert alert-success m-1" role="alert">
+                          {{successMessage}}
+                        </div>
+                      </div>
+
+                    <form *ngIf="signIn">
+                        <div class="form-group row justify-content-center">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <input id="inputEmail" [formControl]="inputEmail" class="form-control m-2 mt-0" type="email" style="width: 250px;" placeholder="email">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <input id="inputPassword" [formControl]="inputPassword" class="form-control m-2 mt-0" type="password" style="width: 250px;" placeholder="password">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <button  type="submit" (click)="login()" class="btn btn-light"> Sign in </button>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <p class="m-2" style="font-size: smaller; cursor: pointer; color: white;"> Forgot password?</p>
+                            </div>
+                          </div>
+                    </form>
+
+                    <form style="background-color:#212121;" *ngIf="!signIn">
+                        <div class="form-group row justify-content-center">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <input id="inputEmail2" [formControl]="inputEmail2" class="form-control m-2 mt-0" type="email" style="width: 250px;" placeholder="your email">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <input id="inputPassword2" [formControl]="inputPassword2" class="form-control m-2 mt-0" type="password" style="width: 250px;" placeholder="new password">
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <input id="inputPassword3" [formControl]="inputPassword3" class="form-control m-2 mt-0" type="password" style="width: 250px;" placeholder="new password">
+                            </div>
+                          </div>
+
+                          <div class="form-group row align-items-center">
+                            <div class="form-check col-sm-12 d-flex justify-content-center">
+                                <div>
+                                    <input  [formControl]="checkBox" class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" style="color: white;" for="gridCheck">
+                                      I agree to the  <span style="cursor: pointer;"> <u>terms</u></span> 
+                                    </label>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <button  type="submit"(click)="register()" class="btn btn-light"> Sign up </button>
+                            </div>
+                          </div>
+                    </form>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+
+</div>

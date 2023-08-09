@@ -1,0 +1,179 @@
+.bgpanel{
+    background-color:none;
+    border-radius: 1em;
+    padding: 2px;
+}
+
+.bgpanel:hover{
+    background-color: #F5F5F5;
+}
+h1 { 
+    display: inline;
+   font-family: 'Recursive', sans-serif;
+
+   
+}
+
+h2 { 
+   font-family: 'Recursive', sans-serif;
+   text-decoration: underline;
+   
+}
+
+h3 { 
+    display: inline;
+   font-family: 'Recursive', sans-serif;
+
+   
+}
+
+h4 { 
+    display: inline;
+   font-family: 'Recursive', sans-serif;
+   
+}
+
+h5 { 
+    display: inline;
+   font-family: 'Recursive', sans-serif;
+   
+}
+
+h6 { 
+    display: inline;
+   font-family: 'Recursive', sans-serif;
+   
+}
+
+li { 
+   font-family: 'Recursive', sans-serif;
+}
+
+ul { 
+    font-family: 'Recursive', sans-serif;
+ }
+
+.metric{
+    padding: 5px;
+    margin: 10px;
+    width: 50px;
+    text-align: center;
+    border-radius: 20%;
+    display: inline-block;
+}
+
+.orange{
+    background-color: #ffbe76;
+}
+
+.pink{
+    background-color: #ff7979;
+}
+
+.lime{
+    background-color: #badc58;
+}
+
+.fitwidth{
+    width: fit-content;
+}
+
+.worldmap{
+    background: url("/assets/map.png") no-repeat center center;
+    background-size: cover; 
+    height: 400px;
+    width: 600px;
+}
+
+.ic{
+    height: 20px;
+    cursor: pointer;
+    width: auto;
+    background: transparent;
+}
+
+.icl{
+    height: 40px;
+    width: auto;
+    background: transparent;
+    cursor: pointer;
+}
+
+green1{
+    background-color: #97e8bc;
+}
+
+.green2{
+    background-color: #43d586;
+}
+
+.green3{ 
+    background-color: #209254;
+}
+
+.orange1{
+    background-color: #ffbe76;
+}
+
+.orange2{
+    background-color: #ffbe76;
+}
+
+.orange3{
+    background-color: #ffbe76;
+}
+
+.red1{
+    background-color: #f8bac1;
+    
+}
+
+.red2{
+    background-color: #e92f45;
+    
+}
+
+.red3{
+    background-color: #a21122;    
+}
+
+.blue1{
+    background-color: #bfe5f3;
+}
+
+.blue2{
+    background-color: #5897f4;
+}
+
+.blue3{
+    background-color: #0e5fd7;
+}
+
+
+
+.small-input{
+    background-color: #ffffff;
+    border-radius: 3mm;
+    width: 250px;
+    height: 40px;
+    margin: 5px;
+    box-shadow: none;
+    border: solid 0.3mm #babababa;
+
+    
+}
+
+input {
+    border: none;
+    padding: 5px;
+    margin: 0;
+    background: transparent;
+    font: 16px sans-serif;
+    outline: none;
+    box-shadow: none;
+}
+
+input:focus{
+    border: none;
+    outline: none;
+}

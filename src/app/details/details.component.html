@@ -1,0 +1,143 @@
+
+
+    <div class="my-container">
+      <ng-template #customLoadingTemplate>
+          <div class="custom-class">
+
+          </div>
+      </ng-template>
+  
+      <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
+  </div>
+
+  <div *ngIf="loading">
+  <!-- this works too - maybe dont use ngx-loading???    just insert gif-->
+  </div>
+
+
+<div *ngIf="!loading" class="container-fluid">
+
+  <div class="row m-2  justify-content-md-left align-items-center">
+
+    <div class="col-md-10 bgpanel m-4">
+      <h2 class="m-3 p-3">
+        <span data-toggle="tooltip" data-placement="bottom" title="headline">
+          {{ selectedArticle.headline }}
+        </span>
+
+      </h2>
+      <p class="m-3">  <span data-toggle="tooltip" data-placement="bottom" title="date">{{selectedArticle.timestamp}}</span> / <span data-toggle="tooltip" data-placement="bottom" title="objID">{{ selectedArticle._id}} </span> </p>
+    </div>
+
+ <!--    <div *ngIf="inAdminView" class="col-md-1 m-4">
+
+      <button (click)="confirmEvent()" class="btn btn-success m-2 "> <img class="icl" src="/assets/file.jpeg">
+        Confirm!</button>
+      <button (click)="deleteEvent()" class="btn btn-danger m-2 "> <img class="icl" src="/assets/file.jpeg">
+        Delete!</button>
+    </div> -->
+  </div>
+
+  <div *ngIf="successMessage" class="row align-items-center justify-content-center m-3">
+    <div style="width: 800px;" class="alert alert-success m-1" role="alert">
+      You suggested the following change » {{this.selectedArticle.proof}} « - Thank you!
+     </div>
+  </div>
+
+  <div *ngIf="errorMessage" class="row align-items-center justify-content-center m-3">
+    <div style="width: 800px;" class="alert alert-danger m-1" role="alert">
+      Invalid input! No whitespaces or ..... Try again :)
+     </div>
+  </div>
+
+  <div class="row justify-content-center align-items-center">
+
+    <div style="white-space:nowrap; display: contents;" class="col-md-7 bgpanel m-2 p-3">
+      <h3 (click)="routeTo(tag)" data-toggle="tooltip" data-placement="bottom" title="click for more articles with this tag" style="cursor: pointer" class="m-2 bgpanel p-2" *ngFor="let tag of selectedArticle.tags.split(' ')"> {{ tag }} </h3>
+      <button style="display: inline;" (click)="toggleAddTagField()" class=" btn btn-light m-2 "> +</button>
+      <input [formControl]="inputTag" *ngIf="fields.tag" (keydown.enter)="addTag()" placeholder="add tag..."
+        type="text">
+    </div>
+    <div class="col-md-3 bgpanel m-2 p-3">
+      <h2  style="text-align: center; color: white;">
+
+        <div data-toggle="tooltip" data-placement="bottom" title="explanation" style="display: inline;">
+          <img class="icl" src="/assets/verified.png">
+          <div [class.blue1]="isLower(selectedArticle.authenticity)"
+            [class.blue2]="isMiddle(selectedArticle.authenticity)" [class.blue3]="isHigh(selectedArticle.authenticity)"
+            class="metric"> {{ selectedArticle.authenticity }}</div>
+        </div>
+
+        <div data-toggle="tooltip" data-placement="bottom" title="explanation" style="display: inline;" class="m-3">
+          <img src="/assets/impact.svg" alt="" class="icl">
+          <div [class.red2]="isLower(selectedArticle.impact)" [class.orange2]="isMiddle(selectedArticle.impact)"
+            [class.green2]="isHigh(selectedArticle.impact)" class="metric">{{ selectedArticle.impact }}</div>
+        </div>
+
+        <div data-toggle="tooltip" data-placement="bottom" title="explanation" style="display: inline;">
+          <img src="/assets/accuracy.png" alt="" class="icl">
+          <div [class.red1]="isLower(selectedArticle.importance)" [class.red2]="isMiddle(selectedArticle.importance)"
+            [class.red3]="isHigh(selectedArticle.importance)" class="metric"> {{ selectedArticle.importance }}</div>
+        </div>
+
+      </h2>
+    </div>
+  </div>
+  <div class="row m-3 justify-content-md-center">
+    <div class="col-md-5 m-2 p-3">
+      <h4 class="m-3 p-2">Causes:</h4>
+      <ul class="m-2">
+        <li data-toggle="tooltip" data-placement="bottom" routerLink="../{{ cause }}" routerLinkActive="active" title="click for more information" *ngFor="let cause of selectedArticle.causes" class="bgpanel p-2"> {{ cause }}</li>
+        <li>
+          <div>
+            <input [formControl]="inputCause" (keydown.enter)="addCause()" placeholder="add by objID..." type="text">
+
+          </div>
+        </li>
+      </ul>
+      <div>
+
+      </div>
+
+    </div>
+    <div class="col-md-5 m-2 p-3">
+      <h4 class="m-3 p-2">Consequences:</h4>
+      <ul class="m-2">
+        <li data-toggle="tooltip" data-placement="bottom" routerLink="../{{ consequence }}" routerLinkActive="active" title="click for more information" *ngFor="let consequence of selectedArticle.consequences" class="bgpanel p-2"> {{consequence}}</li>
+        <li>
+          <div>
+            <input [formControl]="inputConsequence" placeholder="add by objID..." (keydown.enter)="addConsequence()"
+              type="text">
+
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row m-1 align-items-center justify-content-md-center">
+
+    <div class="col-md-5 d-flex justify-content-center m-2 bgpanel p-2">
+      <img class="m-1" alt="Bootstrap Image Preview" src="https://picsum.photos/200/200" />
+      <img class="m-1" alt="Bootstrap Image Preview" src="https://picsum.photos/200/200" />
+      <button style="width: 200px; height: 200px;" class="btn btn-light m-1"> +</button>
+    </div>
+    <div data-toggle="tooltip" data-placement="bottom" title="{{ this.selectedArticle.region }}" class="col-md-5 m-2 p-2 worldmap">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1 align-items-left"></div>
+    <div class="col-md-10  bgpanel m-2" style="white-space:nowrap; display: contents;">
+      <h6 class="m-3 p-2"> more:</h6>
+
+      <img style="display: inline;" class="icl m-2"
+        src="assets/news.svg">
+
+      <button (click)="toggleAddSourceField()" style="height: 40px ; width: 40px;" class=" btn btn-light m-2 ">
+        +</button>
+      <app-shortinput style="display: flex; margin-top: 2px;" *ngIf="fields.source" class="animate-show-hide">
+      </app-shortinput>
+
+
+
+    </div>
+  </div>

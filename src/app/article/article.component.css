@@ -1,0 +1,170 @@
+
+.top-border{
+    border: none;
+    border-radius: 1em;;
+    border-color: black;
+    border-width: 1px;
+    height: fit-content;
+}
+
+
+ p { 
+     display: inline;
+    font-family: 'Recursive', sans-serif;
+    padding: 0;
+    margin: 0;
+    
+}
+
+a:focus{
+    outline: 0;
+}
+
+li:focus{
+    outline: 0;
+}
+
+.clickable { cursor: pointer; }
+
+.ic{
+    height: 20px;
+    width: auto;
+    background: transparent;
+}
+
+
+#noresultsquare{
+    text-align: center;
+    background: url("/assets/sadsmiley.svg");
+    height: 150px;
+    width: 150px;
+    background-color: transparent;
+    background-position: 0 0;;
+}
+
+
+.metric{
+    text-align: center;
+    width: 28px;
+    border-radius: 20%;
+    display: inline-block;
+    color:transparent;
+}
+
+ .fixed-height{
+     height: 50px;
+ }
+
+
+li{
+    list-style-type: none;
+    list-style: none;
+}
+
+.bgpanel{
+    background-color: #fafafa;
+    border-radius: 1em;
+    padding: 2px;
+}
+
+.bgpanelA{
+    background-color: #fafafa;
+    border-radius: 1em;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.bgpanelA:hover{
+    background-color: #F5F5F5;
+    border-radius: 1em;
+    padding: 2px;
+}
+
+
+
+
+.green1{
+    background-color: #97e8bc;
+    color: transparent;
+}
+
+.green2{
+    background-color: #43d586;
+    color: transparent;
+}
+
+.green3{ 
+    background-color: #209254;
+    color: transparent;
+}
+
+.impa1{
+    background-color: #178b5c;
+    color: transparent;
+}
+
+.impa2{
+    background-color: grey;
+    color: transparent;
+}
+
+.impa3{
+    background-color: #a82932;
+    color: transparent;
+}
+
+.impo1{
+    background: url("../../assets/bars1.svg");
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.impo2{
+    background: url("../../assets/bars2.svg");
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.impo3{
+    background: url("../../assets/bars.svg");
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.impo4{
+    background: url("../../assets/bars.svg");
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.auth0{
+    background: url("../../assets/segcirc0.svg");
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.auth1{
+    background: url("../../assets/circ1.svg");
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.auth2{
+    background: url("../../assets/circ2.svg");
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.auth3{
+    background: url("../../assets/circ3.svg");
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+}

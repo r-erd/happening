@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "bfc2a62c-8baa-495b-bf2d-c707d2655958",
+		"name": "happening",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12379009"
+	},
+	"item": [
+		{
+			"name": "Baseline Welcome",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "cross-site"
+					},
+					{
+						"key": "Sec-GPC",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not/A)Brand\";v=\"99\", \"Brave\";v=\"115\", \"Chromium\";v=\"115\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Linux\""
+					}
+				],
+				"url": "http://localhost:8080/"
+			},
+			"response": []
+		},
+		{
+			"name": "ExampleArticle 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not/A)Brand\";v=\"99\", \"Brave\";v=\"115\", \"Chromium\";v=\"115\""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost/"
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Linux\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"headline\": \"Georgia Grand Jury Likely to Hear Trump Case Next Week\",\n    \"causes\": [\"{{$guid}}\",\"{{$guid}}\",\"{{$guid}}\"],\n    \"consequences\": [\"{{$guid}}\",\"{{$guid}}\",\"{{$guid}}\"],\n    \"tags\": \" test\",\n    \"impact\": 5,\n    \"authenticity\": 70,\n    \"importance\": 22,\n    \"timestamp\": \"09.08.2023\",\n    \"published\": true,\n    \"sources\": [\n        \"https://www.nytimes.com/2023/08/08/us/trump-georgia-election-grand-jury.html\"\n    ],\n    \"proof\": \"add : article : Georgia Grand Jury Likely to Hear Trump Case Next Week : to : undefined\"\n}"
+				},
+				"url": "https://localhost:8080/api/article_index/"
+			},
+			"response": []
+		},
+		{
+			"name": "Random Articles",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.globals.set('randomNumber', Math.floor(Math.random() * 100));",
+							"pm.globals.set('randomNumber2', Math.floor(Math.random() * 100));",
+							"pm.globals.set('randomNumber3', Math.floor(Math.random() * 100));",
+							"",
+							"var moment = require('moment');",
+							"",
+							"pm.globals.set('currentdate', moment().format((\"DD.MMMM.YYYY\")));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not/A)Brand\";v=\"99\", \"Brave\";v=\"115\", \"Chromium\";v=\"115\""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost/"
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Linux\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"headline\": \"{{$randomPhrase}}\",\n    \"causes\": [\"{{$guid}}\",\"{{$guid}}\",\"{{$guid}}\"],\n    \"consequences\": [\"{{$guid}}\",\"{{$guid}}\",\"{{$guid}}\"],\n    \"importance\":\"{{randomNumber}}\",\n    \"timestamp\": \"{{currentdate}}\",\n    \"tags\": \"{{$randomBsBuzz}} {{$randomBsNoun}} {{$randomCatchPhraseNoun}} {{$randomAbbreviation}} {{$randomDepartment}}\",\n    \"impact\": \"{{randomNumber2}}\",\n    \"authenticity\": \"{{randomNumber3}}\",\n    \"region\": \"{{$randomCountry}}\",\n    \"published\": true,\n    \"sources\": [\n        \"{{$randomUrl}}\"\n    ],\n    \"proof\": \"add : article : {{$randomPhrase}} : to : undefined\"\n}"
+				},
+				"url": "https://localhost:8080/api/article_index/"
+			},
+			"response": []
+		},
+		{
+			"name": "delete single",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "cross-site"
+					},
+					{
+						"key": "Sec-GPC",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not/A)Brand\";v=\"99\", \"Brave\";v=\"115\", \"Chromium\";v=\"115\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Linux\""
+					}
+				],
+				"url": {
+					"raw": "https://localhost:8080/api/article_index/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"article_index",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "64d2c03d8cf88d7f71984dcf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete all",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "cross-site"
+					},
+					{
+						"key": "Sec-GPC",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not/A)Brand\";v=\"99\", \"Brave\";v=\"115\", \"Chromium\";v=\"115\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Linux\""
+					}
+				],
+				"url": "https://localhost:8080/api/article_index/"
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "cross-site"
+					},
+					{
+						"key": "Sec-GPC",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not/A)Brand\";v=\"99\", \"Brave\";v=\"115\", \"Chromium\";v=\"115\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Linux\""
+					}
+				],
+				"url": "http://localhost:8080/api/article_index/filter/a0/s0/i0/ds01-01-1970/de09-08-2023/k/t/r"
+			},
+			"response": []
+		}
+	]
+}

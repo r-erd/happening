@@ -1,0 +1,85 @@
+<div class="container-fluid">
+  <div class="row align-items-center justify-content-center m-3 alert-dark">
+    <div style="width: 500px; text-align: center;" class="m-1" role="alert">
+      {{this.selectedArticle.proof}}          
+    </div>
+    <button style="width: 100px; height: 40px;" (click)="confirmEvent()" class="btn btn-success m-2 ">
+      approve</button>
+    <button style="width: 100px; height: 40px;" (click)="deleteEvent()" class="btn btn-danger m-2 "> 
+      disapprove</button>
+  </div>
+
+      <div class="row m-2  justify-content-md-left align-items-center">
+    
+        <div class="col-md-10 bgpanel m-4">
+          <h2 class="m-3 p-3">
+            {{ selectedArticle.headline }}
+          </h2>
+          <p class="m-3"> {{selectedArticle.timestamp}} / changeID: {{ selectedArticle._id}}</p>
+        </div>
+      </div>
+    
+      <div class="row justify-content-center align-items-center">
+    
+        <div style="white-space:nowrap; display: contents;" class="col-md-7 bgpanel m-2 p-3">
+          <h3 style="cursor: pointer" (click)="removeTag(tag)" class="m-2 bgpanel p-2" *ngFor="let tag of (modArt.tags)"> {{ tag }} </h3>
+        </div>
+        <div *ngIf="!modifiedFlag" class="col-md-3 bgpanel m-2 p-3">
+          <h2 style="text-align: center;">
+            <div style="display: inline;">
+              <img class="icl" src="/assets/verified.png">
+              <div [class.blue1]="isLower(selectedArticle.authenticity)"
+                [class.blue2]="isMiddle(selectedArticle.authenticity)" [class.blue3]="isHigh(selectedArticle.authenticity)"
+                class="metric"> {{ modArt.authenticity }}</div>
+            </div>
+    
+            <div style="display: inline;" class="m-3">
+              <img src="/assets/impact.svg" alt="" class="icl">
+              <div [class.red2]="isLower(selectedArticle.impact)" [class.orange2]="isMiddle(selectedArticle.impact)"
+                [class.green2]="isHigh(selectedArticle.impact)" class="metric">{{ modArt.impact }}</div>
+            </div>
+    
+            <div style="display: inline;">
+              <img src="/assets/accuracy.png" alt="" class="icl">
+              <div [class.red1]="isLower(selectedArticle.importance)" [class.red2]="isMiddle(selectedArticle.importance)"
+                [class.red3]="isHigh(selectedArticle.importance)" class="metric"> {{ modArt.importance }}</div>
+            </div>
+    
+          </h2>
+        </div>
+      </div>
+      <div class="row m-3 justify-content-md-center">
+        <div class="col-md-5 m-2 p-3">
+          <h4 class="m-3 p-2">Causes:</h4>
+          <ul class="m-2">
+            <li *ngFor="let cause of modArt.causes" (click)="removeCause(cause)" class=" bgpanel p-2"> {{ cause }}</li>
+          </ul>
+          <div>
+    
+          </div>
+    
+        </div>
+        <div class="col-md-5 m-2 p-3">
+          <h4 class="m-3 p-2">Consequences:</h4>
+          <ul class="m-2">
+            <li *ngFor="let consequence of modArt.consequences" (click)="removeConsequence(consequence)" class=" bgpanel p-2"> {{consequence}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row m-1 align-items-center justify-content-md-center">
+    
+        <div style="border: red solid 1mm" class="col-md-5 d-flex justify-content-center m-2 bgpanel p-2">
+          <img class="m-1" alt="Bootstrap Image Preview" src="https://picsum.photos/200/200" />
+          <img class="m-1" alt="Bootstrap Image Preview" src="https://picsum.photos/200/200" />
+        </div>
+        <div style="border: red solid 1mm" class="col-md-5 m-2 p-2 worldmap">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-1 align-items-left"></div>
+        <div class="col-md-10  bgpanel m-2" style="white-space:nowrap; display: contents;">
+          <h6 class="m-3 p-2"> more:</h6>
+    
+          <img style="display: inline;" class="icl m-2" src="assets/news.svg">
+        </div>
+      </div>

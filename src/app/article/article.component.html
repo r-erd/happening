@@ -1,0 +1,91 @@
+<div class="bgpanel">
+
+    <!-- Array is empty -->
+    <div *ngIf="this.noResult">
+        <div class="row justify-content-center align-items-center" style="height: 300px;">
+            <div class="col-md-2">
+                <h4 id="noresultsquare"></h4>
+            </div>
+        </div>
+
+        <div class="row justify-content-center" *ngIf="true">
+            <h4 style="text-align: center;">Looks like we don't know about that yet. Maybe you want to
+                <!-- add event emitter to go to creator view // reset filter event-->
+                <a routerLink="../create" routerLinkActive="active" data-toggle="tooltip" data-placement="bottom"
+                    title="click to create a new article" class="clickable">add</a>
+                something? <br>
+                <h6 class="m-4">Or <span (click)="resetFilterEvent()" data-toggle="tooltip" data-placement="bottom"
+                        title="click to reset the filter settings" class="clickable">reset</span> your filter?</h6>
+            </h4>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- headline and other stuff is not vertically centerd-->
+    <ul *ngIf="!this.noResult" class="list-group m-4">
+        <!-- list of articles-->
+        <li *ngFor="let article of this.articles" [routerLink]="['../art',article._id]"
+            (click)="selectedArticle(article)" routerLinkActive="active" class="top-border  align-middle">
+
+
+            <div class=" container-fluid d-none d-lg-block">
+
+                <div class=" bgpanelA row align-items-center justify-content-center fixed-height">
+                    <div class="col-md-1 " style=" padding: 0; text-align: center; font-size: 1.5vmin;">
+                        <p> {{ article.timestamp }} </p>
+                    </div>
+                    <div class="col-md-2 justify-content-center align-items-center" style="text-align: center;">
+                        <!--align to left!!-->
+                        <div [class.auth0]="isZero(article.authenticity)" [class.auth1]="isLower(article.authenticity)"
+                            [class.auth2]="isMiddle(article.authenticity)" [class.auth3]="isHigh(article.authenticity)"
+                            class="metric "> {{article.authenticity}} </div>
+                        <div [class.impo1]="isLower(article.importance)" [class.impo2]="isMiddle(article.importance)"
+                            [class.impo3]="isHigh(article.importance)" class="metric "> {{article.importance}} </div>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="text m-1 my-auto align-middle"> {{ article.headline }} </p>
+                    </div>
+                    <div class="col-md-1">
+                        <div [class.impa1]="isLower(article.impact)" [class.impa2]="isMiddle(article.impact)"
+                            [class.impa3]="isHigh(article.impact)" class="metric "> {{ article.impact}} </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-xs-block d-lg-none">
+                <div class="container fluid">
+
+                    <div class="bgpanelA row align-items-center justify-content-center">
+                        <div class="col-12">
+                            {{ article.headline }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </li>
+
+
+    </ul>
+
+
+    <div class="my-container">
+        <ng-template #customLoadingTemplate>
+            <div class="custom-class">
+
+            </div>
+        </ng-template>
+
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate">
+        </ngx-loading>
+    </div>
+
+    <div *ngIf="loading">
+        <!-- this works too - maybe dont use ngx-loading???    just insert gif-->
+    </div>
+
+
+</div>

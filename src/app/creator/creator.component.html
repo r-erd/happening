@@ -1,0 +1,103 @@
+<div class="container-fluid">
+
+    <div class="row m-2  justify-content-md-left align-content-center align-items-center">
+
+        <div class="col-md-10 bgpanel m-4">
+            <h2 class="m-3 p-3">
+                <input [formControl]="inputHeadline" (change)="addHeadline()" maxlength="90" class="p-3 nofocusborder" type="text" placeholder="enter headline here..." style="font-size:larger; width:95%;">
+
+            </h2>
+            <p class="m-3"> a moment ago / 0000000000000000000000000 </p>
+        </div>
+
+        <div class="col-md-1 m-4">
+            
+            <button (click)="sendAndBackEvent()"  class="btn btn-success m-2 "> <img class="icl" src="/assets/file.svg"> Submit!</button>
+        </div>
+    </div>
+
+    <div *ngIf="successMessage" class="row align-items-center justify-content-center m-3">
+        <div style="width: 800px;" class="alert alert-success m-1" role="alert">
+          {{ message }}
+         </div>
+      </div>
+    
+      <div *ngIf="errorMessage" class="row align-items-center justify-content-center m-3">
+        <div style="width: 800px;" class="alert alert-danger m-1" role="alert">
+          {{ message }}
+         </div>
+      </div>
+
+
+    <div class="row justify-content-center align-items-center">
+
+        <div style="white-space:nowrap; display: contents;" class="col-md-7 bgpanel m-2 p-3">
+            <h3 (click)="removeTag(tag)" style="cursor: pointer" class="m-2 bgpanel p-2" *ngFor="let tag of this.tagsArray"> {{tag}}  </h3>
+            <input data-toggle="tooltip" data-placement="bottom" title="press enter to confirm entry" [formControl]="inputTag" (keydown.enter)="addTag(inputTag.value)" class="m-2 p-2" style="font-size: larger;" placeholder="enter tags...">
+        </div>
+       
+    </div>
+    <div class="row m-3 justify-content-md-center">
+        <div class="col-md-5 m-2 p-3">
+            <h4 class="m-3 p-2">Causes:</h4>
+            <ul class="m-2">
+                <li (click)="removeCause(cause)" *ngFor="let cause of createdArticle.causes" class="p-2 bgpanel"> {{ cause }}</li>
+                <li>
+                    <div>
+                        <input data-toggle="tooltip" data-placement="bottom" title="press enter to confirm entry" [formControl]="inputCause" (keydown.enter)="addCause(inputCause.value)" placeholder="add cause..."
+                             type="text">
+
+                    </div>
+                </li>
+            </ul>
+            <div>
+
+            </div>
+
+        </div>
+        <div class="col-md-5 m-2 p-3">
+            <h4 class="m-3 p-2">Consequences:</h4>
+            <ul class="m-2">
+                <li (click)="removeConsequence(consequence)" *ngFor="let consequence of createdArticle.consequences" class="p-2 bgpanel"> {{consequence}}</li>
+                <li>
+
+                    <div>
+                        <input data-toggle="tooltip" data-placement="bottom" title="press enter to confirm entry" [formControl]="inputConsequence"
+                            (keydown.enter)="addConsequence(inputConsequence.value)" placeholder="add consequence..."
+                            type="text">
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row m-1 align-items-center justify-content-md-center">
+
+        <div  class="col-md-5 d-flex justify-content-center m-2 bgpanel p-2">
+            <img class="m-1" alt="Bootstrap Image Preview" src="https://picsum.photos/200/200" />
+            <img class="m-1" alt="Bootstrap Image Preview" src="https://picsum.photos/200/200" />
+            <button style="width: 200px; height: 200px;" class="btn btn-light m-1"> +</button>
+        </div>
+        <div class="col-md-5 m-2 p-2 worldmap">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1 align-items-left"></div>
+        <div class="col-md-10  bgpanel m-2" style="white-space:nowrap; display: contents;">
+            <h5 class="m-3 p-2"> more:</h5>
+
+
+
+
+            <li class="m-3 p-2 bgpanel" (click)="removeSource(source)" style="list-style-type: none;" *ngFor="let source of createdArticle.sources"> {{source}} </li>
+
+
+            
+                <input data-toggle="tooltip" data-placement="bottom" title="press enter to confirm entry" style="display: flex;" [formControl]="inputSource"
+                    (keydown.enter)="addSource(inputSource.value)"
+                    type="text" placeholder="add your sources... (links)">
+
+            
+
+        </div>
+    </div>

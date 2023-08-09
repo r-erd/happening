@@ -1,0 +1,93 @@
+
+<div class="container-fluid">
+
+
+        <div class="bgpanel">
+
+            <!-- Array is empty -->
+            <div *ngIf="this.noResult">
+                <div class="row justify-content-center align-items-center" style="height: 300px;">
+                    <div class="col-md-12 d-flex justify-content-center align-items-center">
+                        <img src="/assets/like.svg" style="width: 150px; height: auto;">
+                    </div>
+                </div>
+        
+                <div class="row justify-content-center align-items-center" *ngIf="true">
+                    <div class="col-md-12">
+                        <h4 style="text-align: center; padding: 1cm">Looks like there currently are no articles to vote on. <br> 
+                            You might want to
+                            <!-- add event emitter to go to creator view // reset filter event-->
+                            <a routerLink="../create" routerLinkActive="active" data-toggle="tooltip" data-placement="bottom"
+                                title="click to create a new article" class="clickable"> <em>add</em> </a>
+                                something yourself?
+                        </h4>
+        
+                    </div>
+        
+                </div>
+            </div>
+        
+        
+        
+            <!-- headline and other stuff is not vertically centerd-->
+            <ul *ngIf="!this.noResult" class="list-group m-4">
+                <!-- list of articles-->
+                <li *ngFor="let article of this.articles" [routerLink]="['../vote',article._id]"
+                    (click)="selectedArticle(article)" routerLinkActive="active" class="top-border  align-middle">
+        
+        
+                    <div class=" container-fluid d-none d-lg-block">
+        
+                        <div class=" bgpanelA row align-items-center justify-content-center fixed-height">
+                            <div class="col-md-1 " style=" padding: 0; text-align: center; font-size: 1.5vmin;">
+                                <p> {{ article.timestamp }} </p>
+                            </div>
+                            
+                            <div class="col-md-10">
+                                <p class="text m-1 my-auto align-middle"> {{ article.headline }} </p>
+                            </div>
+                            <div class="col-md-1">
+
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="d-xs-block d-lg-none">
+                        <div class="container fluid">
+        
+                            <div class="bgpanelA row align-items-center justify-content-center">
+                                <div class="col-12">
+                                    {{ article.headline }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </li>
+        
+        
+            </ul>
+        
+        
+            <div class="my-container">
+                <ng-template #customLoadingTemplate>
+                    <div class="custom-class">
+        
+                    </div>
+                </ng-template>
+        
+                <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate">
+                </ngx-loading>
+            </div>
+        
+            <div *ngIf="loading">
+                <!-- this works too - maybe dont use ngx-loading???    just insert gif-->
+            </div>
+        
+        
+        </div>
+    
+    
+    </div>
+
+    

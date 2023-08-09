@@ -1,0 +1,48 @@
+.blockA {
+    height: 300px;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.blockB {
+    height: 300px;
+    background-color: white;
+}
+
+
+h2 { 
+    display: inline;
+   font-family: 'Recursive', sans-serif;
+   
+}
+
+h3 { 
+    display: inline;
+   font-family: 'Recursive', sans-serif;
+
+   
+}
+
+h4 { 
+    display: inline;
+   font-family: 'Recursive', sans-serif;
+   
+}
+
+h5 { 
+    display: inline;
+   font-family: 'Recursive', sans-serif;
+   
+}
+
+h6 { 
+    display: inline;
+   font-family: 'Recursive', sans-serif;
+   
+}
+
+p { 
+    display: inline;
+   font-family: 'Recursive', sans-serif;
+   
+}

@@ -1,0 +1,44 @@
+version: '3.7'
+# usage:
+# sudo docker-compose build
+# sudo docker-compose up
+
+services:
+  mongodb_container:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_DATABASE=Happening
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    volumes:
+      - mongodb:/data/db
+      - mongoconfig:/data/configdb
+
+
+  mongodb_interface:
+    image: rbin1/happening-backend:1.0
+    container_name: interface
+    environment:
+      - MONGO_URL=mongodb://admin:admin@mongodb_container:27017
+    depends_on:
+      - mongodb_container
+    ports:
+    - "8080:8080"
+
+
+
+  happeningserver:
+    image: rbin1/happening:1.0
+    container_name: webserver
+    depends_on:
+    - mongodb_container
+    ports:
+    - "80:80"
+
+volumes:
+  # default dir on Ubuntu: /var/lib/docker/volumes
+  mongodb:
+  mongoconfig:

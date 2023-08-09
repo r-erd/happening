@@ -1,0 +1,34 @@
+.bot-nav-bar > a{
+    display: inline-block;
+    margin-right: 20px;
+    height: 80px;
+    line-height: 100%;
+    font-size: 0.8vw;
+    color: black;
+}
+
+nav {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    width: 100%;
+}
+
+.bot-nav-b{
+    font-size: 11px;
+    color: black;
+}
+
+.bot-centerbox {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+footer {
+    padding-top: 10%;
+    width: 100%;
+    height:3cm;
+
+}

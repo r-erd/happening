@@ -1,0 +1,314 @@
+<div class="container">
+
+    <div class="row m-3" style="height: 20px;">
+    <button class="btn btn-primary" (click)="this.test = !this.test">
+        trigger this with scroll y axis
+    </button>
+    </div>
+
+
+<div #lgview class="d-none d-sm-none d-xs-none d-md-block"> 
+        <div [@test]="this.test ? 'one' : 'two'" class="row m-4 blockA">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-11 m-2 ">
+                        <p>see whats </p> <h2>happening</h2> <p> in the world around you</p>
+                    </div>
+                </div>
+        
+                <div class="row m-2 justify-content-center align-items-center" style="min-height: 300px;">
+                    <div class="col-md-5 m-2">
+                        <p>
+                            our aim is to be able to provide verified key information on every record we have <br> <br> we want you to get an overview and a general idea at a glance, enabling you to arrange all the information so that it composes a bigger picture in you mind
+                        </p>
+                    </div>
+                    <div class="col-md-5 m-2" style="margin-top: 20px;">
+                        <img src="assets/hpng_g_info.svg" style="display: inline-flex; width: 30%;" alt="">
+                        <img src="assets/hpng_g_info.svg" style="display: inline-flex; width: 30%;" alt="">
+                        <img src="assets/hpng_g_info.svg" style="display: inline-flex; width: 30%;" alt="">
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row m-4 blockB">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-11 m-2">
+                        <p>see whats </p> <h2>relevant</h2> <p> in the world around you</p>
+                    </div>
+                </div>
+                <div class="row m-2 align-items-center" style="min-height: 300px;">
+
+                    <div class="col-md-5 m-2 align-items-center justify-content-center">
+                        <p>
+                            we try to determine how important an event is - every entry is constantly evaluated and gets an importance rating, dependent on the relationship it has to other entries and in turn their relationships
+                        </p>
+                    </div>
+                    <div class="col-md-5 m-2">
+                        <div >
+                            <img  src="assets/hpng_g_relevant.svg" object-fit="contain" alt="">
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="row m-4 blockA">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-11 m-2">
+                        <p>see whats </p> <h2>connected</h2> <p> in the world around you</p>
+                    </div>
+                </div>
+                <div class="row m-2 align-items-center"style="min-height: 300px;">
+                    <div class="col-md-5 m-2">
+                        <img src="assets/hpng_g_causal.svg" style="filter: invert(100%) " alt="">
+                    </div>
+                    <div class="col-md-5 m-2">
+                        <p>
+                            every record has attached to it two lists <br> <br>one list containing all the events which caused this event to happen and another list containing all the events which resulted from this event <br><br>
+                this enables you to easily find out about causal chains and track the impact of events
+                
+                        </p>
+                    </div>
+
+    
+                </div>
+                
+            </div>
+
+        </div>
+
+
+
+    <!--     <div class="row m-4 blockB">
+            <div class="col-md-11">
+                <div class="row">
+                    <div class="col-md-11 m-2">
+                        <p>see whats </p> <h2>true</h2> <p> the world around you</p>
+                    </div>
+                </div>
+                <div class="row m-2 align-items-center justify-content-center">
+                    <p>we want our news to focus on actual, non-disputable changes taking place in the world. 
+                        that way you won’t ever miss out on big changes that impact the world you live in
+                        </p>
+                </div>
+            
+            </div>
+
+        </div> -->
+        <div class="row m-4 blockB">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-11 m-2">
+                        <p>why </p> <h2>we</h2> <p> are</p>
+                    </div>
+                </div>
+                <div class="row m-2 align-items-center justify-content-center" style="min-height: 300px;">
+
+
+                
+                <div class="col-md-8 m-2">
+                    <p>we found out that with the current political struggles and the huge amount of (differing) coverage from media of everything it's very hard to keep up with what happens around us. some stuff just disappears suddenly and then is never talked about again. another day another catastrophe. we want to fight this culture in which news are fighting for our attention and are unable to provide us with the feeling of having an overview of whats going on in the world.<br><br>
+                        we think there should be a <b>free, open and democratic platform</b> providing such a service <br><br>
+                        so we made it our hobby to provide the structure for this constantly growing humanity-built database 
+                    </p>
+                </div>
+
+                <div class="col-md-3 m-2">
+                    <img src="assets/target.png" alt="">
+                </div>
+
+            </div>
+
+            </div>
+
+        </div>
+        <div class="row m-4 blockA">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-11 m-2">
+                        <p>who </p> <h2>we</h2> <p> are</p>
+                    </div>
+                </div>
+                <div class="row m-2 align-items-center justify-content-center" style="min-height: 300px;">
+                        <h3>under construction</h3>
+                </div>
+
+            </div>
+        
+        </div>
+</div>
+
+<div #smview class="d-xs-block d-sm-block d-md-none" style="font-size: smaller;">
+    <div [@test]="this.test ? 'one' : 'two'" class="row m-4 blockA">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-xs-12 m-2">
+                    <p>see whats </p> <h2>happening</h2> <p> in the world around you</p>
+                </div>
+            </div>
+    
+            <div class="row m-2 justify-content-center align-items-center" style="min-height: 300px;">
+                <div class="col-xs-5 m-2">
+                    <p>
+                        our aim is to be able to provide verified key information on every record we have <br> <br> we want you to get an overview and a general idea at a glance, enabling you to arrange all the information so that it composes a bigger picture in you mind
+                    </p>
+                </div>
+                <div class="col-xs-5 m-2" style="margin-top: 20px;">
+                    <img src="assets/hpng_g_info.svg" style="display: inline-flex; width: 30%;" alt="">
+                    <img src="assets/hpng_g_info.svg" style="display: inline-flex; width: 30%;" alt="">
+                    <img src="assets/hpng_g_info.svg" style="display: inline-flex; width: 30%;" alt="">
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row m-4 blockB">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-xs-11 m-2">
+                    <p>see whats </p> <h2>relevant</h2> <p> in the world around you</p>
+                </div>
+            </div>
+            <div class="row m-2 align-items-center" style="min-height: 300px;">
+
+                <div class="col-12 align-items-center justify-content-center">
+                    <p>
+                        we try to determine how important an event is - every entry is constantly evaluated and gets an importance rating, dependent on the relationship it has to other entries and in turn their relationships
+                    </p>
+                </div>
+
+
+
+            </div>
+
+            <div class="row m-2 align-items-center justify-content-center">
+                <img  src="assets/hpng_g_relevant.svg" alt="">
+        </div>
+
+        </div>
+
+
+
+    </div>
+
+    <div class="row m-4 blockA">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-xs-11 m-2">
+                    <p>see whats </p> <h2>connected</h2> <p> in the world around you</p>
+                </div>
+            </div>
+            <div class="row m-2 align-items-center"style="min-height: 300px;">
+                <div class="col-md-5 m-2">
+                    <img src="assets/hpng_g_causal.svg" style="filter: invert(100%) " alt="">
+                </div>
+                <div class="col-xs-5 m-2">
+                    <p>
+                        every record has attached to it two lists <br> <br>one list containing all the events which caused this event to happen and another list containing all the events which resulted from this event <br><br>
+            this enables you to easily find out about causal chains and track the impact of events
+            
+                    </p>
+                </div>
+
+  
+            </div>
+            
+        </div>
+
+    </div>
+
+
+
+<!--     <div class="row m-4 blockB">
+        <div class="col-md-11">
+            <div class="row">
+                <div class="col-md-11 m-2">
+                    <p>see whats </p> <h2>true</h2> <p> the world around you</p>
+                </div>
+            </div>
+            <div class="row m-2 align-items-center justify-content-center">
+                <p>we want our news to focus on actual, non-disputable changes taking place in the world. 
+                    that way you won’t ever miss out on big changes that impact the world you live in
+                    </p>
+            </div>
+          
+        </div>
+
+    </div> -->
+
+
+
+    <div class="row m-4 blockB">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-xs-11 m-2">
+                    <p>why </p> <h2>we</h2> <p> are</p>
+                </div>
+            </div>
+            <div class="row m-2 align-items-center justify-content-center" style="min-height: 300px;">
+
+
+            
+            <div class="col-xs-8 m-2">
+                <p>we found out that with the current political struggles and the huge amount of (differing) coverage from media of everything it's very hard to keep up with what happens around us. some stuff just disappears suddenly and then is never talked about again. another day another catastrophe. we want to fight this culture in which news are fighting for our attention and are unable to provide us with the feeling of having an overview of whats going on in the world.<br><br>
+                    we think there should be a <b>free, open and democratic platform</b> providing such a service <br><br>
+                    so we made it our hobby to provide the structure for this constantly growing humanity-built database 
+                </p>
+            </div>
+
+            <div class="col-xs-3 m-2">
+             <!--    <img src="assets/target.png" alt=""> -->
+            </div>
+
+        </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="row m-4 blockA">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-11 m-2">
+                    <p>who </p> <h2>we</h2> <p> are</p>
+                </div>
+            </div>
+            <div class="row m-2 align-items-center justify-content-center" style="min-height: 300px;">
+                    <h3>under construction</h3>
+            </div>
+
+        </div>
+       
+    </div>
+
+
+</div>
+
+    
+
+    <app-footer></app-footer>
+
+</div>
+
+

@@ -1,0 +1,89 @@
+<div>
+    <div class="col align-items-center">
+
+        <div class="container top-border fixed">
+
+            <div class="row justify-content-left align-items-center">
+                <p style="margin-left: 20px; margin-top: 10px; font-size: x-small;">  refresh interval </p>
+            </div>
+    
+            <div class="row justify-content-center align-items-center">
+                <button [class.activated]="intervalZ" class="btn btn-light m-1 inv" (click)="toggleLive(0)"> ∞  </button> 
+                <button [class.activated]="intervalA" class="btn btn-light m-1 inv" (click)="toggleLive(1)" > 10s</button> 
+                <button [class.activated]="intervalB" class="btn btn-light m-1 inv" (click)="toggleLive(2)"> 1m</button>
+                <button [class.activated]="intervalC" class="btn btn-light m-1 inv" (click)="toggleLive(3)">10m</button>
+            </div>
+            <hr>
+    
+            <div class="row">
+                <p style="margin-left: 20px; font-size: x-small;">from</p> 
+            </div>
+    
+            <div  class="row justify-content-center">    
+                <input [formControl]="inputDateStart" (change)="addStart()" type="date">
+            </div>
+            <div  class="row">
+                <p style="margin-left: 20px; font-size: x-small;">till</p> </div>
+            <div  class="row justify-content-center">
+               <input [formControl]="inputDateEnd"  (change)="addEnd()" type="date">
+            </div>
+            <hr>
+    
+            <div class="row" style="margin-top: 0; margin-bottom: 0;">
+                <p style="margin-left: 20px; font-size: x-small; margin-top: 0;">region</p> 
+            </div>
+            <div class="row m-2 justify-content-left align-items-center">
+      
+                <input style="display: inline-flex; width: 60%;" id="regionInput" list="dynamicRegions" (keyup)="getRegions($event)" type="text" [formControl]="inputRegion" (change)="setRegion()" placeholder="everywhere" style="margin-inline-start: 0;"> 
+                <datalist id="dynamicRegions">
+                    <option *ngFor="let region of regionList"> {{region}} </option>
+        
+                </datalist>
+            </div>
+    
+    
+            <hr>
+    
+            <!-- change colors of these -->
+            <div class="row m-1 justify-content-center">
+                <p style=" width: 50px;margin-top: 10px;">Auth</p> 
+                <form class="range-field" style="display: inline-flex;">
+                    <input class="slider" [formControl]="inputMetricAuth" (change)="setAuth()" type="range" min="0" max="100" step="10" style="display: inline-flex;" />
+                </form>
+            </div>
+    
+            <div class="row m-1 justify-content-center">
+                <p style="width: 50px;margin-top: 10px;"> Sign</p> 
+                <form class="range-field">
+                    <input class="slider" [formControl]="inputMetricSign" (change)="setSign()" type="range" min="0" max="100" step="10" />
+                </form>
+            </div>
+    
+            <div class="row m-1 justify-content-center">
+                <p style="width: 50px; margin-top: 10px;"> Imp</p>
+                <form class="range-field">
+                    <input class="slider" [formControl]="inputMetricImp" (change)="setImp()" type="range" min="0" max="100" step="10" />
+                </form>
+            </div>
+    
+            <hr>
+    
+            <div class="row m-2 justify-content-left">
+                <input list="dynamicTags" type="text" [formControl]="inputTag" (keyup)="setTagSuggestions($event)" (keydown.enter)="addTag()" placeholder="add tags..."
+                    style="margin-inline-start: 0;">
+                    <datalist id="dynamicTags">
+                        <option *ngFor="let tag of tagList"> {{tag}} </option>
+                    </datalist>
+            </div>
+            <hr>
+    
+            <p style="font-size: smaller;">filtered by tags (up to 4):</p>
+    
+            <div class="row m-2" style=" padding-bottom: 20px; width: 250px;">
+                <h5 data-toggle="tooltip" data-placement="bottom" title="click to remove tag" (click)="removeTag(tag)" class="bgpaneltag clickable m-1 p-2"
+                    *ngFor="let tag of this.tags"> {{ tag }} </h5>
+            </div>
+
+        </div>
+    </div>
+</div>
