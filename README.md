@@ -75,7 +75,7 @@ To work with the app, follow the directions below:
 - maybe also spin up the database separately, if you work with articles
 
 ### Build
-to build the docker image, follow the directions below:
+To build the docker image, follow the directions below:
 - check if `ng build` completes without any fatal errors
 - run `sudo docker build -t rbin1/happening:VERSION .`
 - run `sudo docker push rbin1/happening:VERSION`
