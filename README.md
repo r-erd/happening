@@ -3,7 +3,7 @@
 This was a project I worked on for a few weeks in my 2nd semester (Fall 2020) studying computer science, trying to learn more about web development. At the time I was frustrated with how biased news are usually presented to us and in 2020 fake news was also a rather big issue. So I thought it would be a cool idea to have a platform where every human could participate and share their perspective on what was going on, objectively describing what had occurred. I wanted to capture and digitize what was _happening_ in our world, and what the causes and consequences of each event were, without any bias or opinions involved. Needless to say, that this idea has some issue, e.g. policy, scalability and verification, but I liked it and started working on it. I abandoned it at the end of the semester break, when university started again.
 
 Fast forward to Summer 2023, and I just spent a few hours trying to get this working again, dockerize it and put some things in order. 
-Below you will find a list of features I developed, and a diagram with the architecture I was having in mind.
+Below you will find a list of features I implemented, and a diagram with the architecture I had in mind. Of course, this project is discontinued and not functional in any significant way.
 
 
 <p align="center">
